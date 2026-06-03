@@ -115,6 +115,7 @@ nav a:hover{
   width:350px;
   border-radius:30px;
   z-index:2;
+  object-fit: cover;
 }
 
 .glow{
@@ -172,9 +173,13 @@ section{
   font-size:14px;
 }
 
-.timeline-item p{
+.timeline-item p, .timeline-item ul{
   margin-top:10px;
   color:#cbd5e1;
+}
+
+.timeline-item ul {
+  padding-left: 20px;
 }
 
 .skills-grid,
@@ -216,58 +221,6 @@ section{
   padding:10px 20px;
   border-radius:10px;
   display:inline-block;
-}
-
-.contact-container{
-  padding:40px;
-  text-align:center;
-  line-height:2.5;
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  color:#94a3b8;
-}
-
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
-@media(max-width:900px){
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-text h1{
-    font-size:42px;
-  }
-
-  nav{
-    position:absolute;
-    top:80px;
-    right:0;
-    background:#1e293b;
-    flex-direction:column;
-    width:220px;
-    padding:20px;
-    display:none;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  .menu-toggle{
-    display:block;
-  }
-}
-.gallery{
-  padding:100px 10%;
 }
 
 .gallery-container{
@@ -316,4 +269,63 @@ footer{
 .gallery-overlay h3{
   color:#38bdf8;
   margin-bottom:10px;
+}
+
+.contact-container{
+  padding:40px;
+  text-align:center;
+  line-height:2.5;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color: white;
+}
+
+/* RESPONSIVITAS DEVICE MOBILE & TABLET */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top: 140px;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .menu-toggle{
+    display:block; /* Tampilkan tombol hamburger */
+  }
+
+  nav{
+    position:absolute;
+    top:100%; /* Menempel tepat di bawah header */
+    right:0;
+    background:rgba(30, 41, 59, 0.98); /* Background gelap transparan agar konsisten */
+    flex-direction:column;
+    width:100%;
+    padding:30px;
+    gap: 20px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display:none; /* Sembunyikan default-nya */
+  }
+
+  nav.active{
+    display:flex; /* Tampilkan menu saat tombol di-klik */
+  }
 }
